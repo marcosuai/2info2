@@ -1,0 +1,131 @@
+/* Define margens e padding para zero */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Imagem de fundo cobrindo toda a página */
+body {
+    background-image: url('img01.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+}
+
+/* Banner superior com estilo Matrix */
+#banner {
+    width: 100%;
+    height: 4cm; /* Altura de 4cm */
+    background-color: rgba(0, 0, 0, 0.8); /* Escuro para contraste */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+}
+
+/* Texto no banner */
+#banner-text {
+    position: relative;
+    z-index: 2;
+}
+
+/* Animação das letras no estilo Matrix */
+#matrix-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.matrix-char {
+    position: absolute;
+    width: 20px; /* Ajuste conforme necessário */
+    height: 20px; /* Ajuste conforme necessário */
+    color: #0f0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    white-space: nowrap;
+    opacity: 0.8;
+    animation: drop linear infinite;
+}
+
+/* Animação das letras caindo */
+@keyframes drop {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* Ajusta a velocidade da animação das letras */
+.matrix-char {
+    animation-duration: 2s; /* Duração da animação em segundos */
+}
+
+/* Container principal */
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4cm; /* Espaço abaixo do banner */
+}
+
+/* Área central */
+#content {
+    text-align: center;
+    width: 100%;
+    height: calc(100vh - 4cm); /* Altura total menos o banner */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#content h1 {
+    color: white;
+    font-size: 2rem;
+}
+
+/* Estilo dos botões no banner */
+#buttons {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Estilo dos botões */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    text-decoration: none; /* Remove o sublinhado dos links */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
